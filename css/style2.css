@@ -1,0 +1,40 @@
+*{box-sizing: border-box; margin: 0; padding: 0}
+.c_all{width: 100%; float: left}
+.c_left{width: 35%; float: left;position: fixed;height: 100vh;box-sizing: border-box;overflow: hidden;background-color: white; padding: 50px 50px 600px 50px;font-family: 'Noto Sans KR', sans-serif}
+.c_right{width: 65%; float: left;box-sizing: border-box;margin-left: 35%; text-align: center}
+#playzz{background-color: #e36e5f}
+#ss{background-color: #24e08e}
+#lazyoaf{background-color: #f2bac7}
+#singstreet{background-color: #00f700}
+.rightimg01{margin: 100px 0 0 0}
+.rightimg02{margin: 0 0 50px 0}
+#lazyoaf .gif79{box-shadow: 10px -11px 20px 3px #dba8b4;}
+#singstreet .gif79{box-shadow: 10px -11px 20px 3px #00c600;}
+
+@media only screen and (max-width: 799px){[class*="c"]{width: 100%}aside li{background-color: white; float: left; width: 17%; text-align: center;font-size: 14px; font-weight: bold}section#main{margin-top: 30px} .c_left{height: 0; position: relative;} .c_right{margin-left: 0;} .triangle{margin-top: 0px;}.rightimg01{margin: 50px 0 50px 0}}
+
+.buttonA{display: inline-block;height: 36px;padding: 0 10px 0 10px;background-color: #c6fe28;border: 1px solid #c6fe28;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 100; font-size: 30px;}
+.buttonB{display: inline-block;position: relative;top: 80px;left: 50%;right: 50%;transform: translate(-50%, -50%);padding: 8px 40px 8px 40px;background-color: #c6fe28;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 500; font-size: 20px;}
+.buttonA:hover{color: black;background-color: #9fce1f; border: 1px solid #9fce1f}
+.buttonB:hover{color: black;background-color: #9fce1f}
+
+a:link{text-decoration: none;}
+a:visited{color: white; text-decoration: none;}
+.triangle {display:inline-block; width:0; height:0; border-style:solid; border-width:17px;position: absolute;bottom:60px}
+.triangle.left:hover{border-color:transparent #c6fe28 transparent transparent}
+.triangle.right:hover{border-color:transparent transparent transparent #c6fe28}
+.triangle.left {border-color:transparent black transparent transparent;left: 30px;}
+.triangle.right {border-color:transparent transparent transparent black;float: right;right: 30px;}
+
+.program{font-family: 'Montserrat', sans-serif; font-weight: 100; padding-top: 40px; color: dimgray;font-size: 10px;}
+.program .ai:hover{color: #fa8e26}
+.program .ps:hover{color: #24d3fd}
+.program .un:hover{color: #cecece}
+.program .css:hover{color: #449ce9}
+.program .ae:hover{color: #e7b7fc}
+
+.design{font-family: 'Montserrat', sans-serif; font-weight: 200; color: black;font-size: 15px;}
+.projectnameE{font-family: 'Montserrat', sans-serif; font-weight: 900; padding-top: 30px; color: black;font-size: 30px;}
+.projectnameK{font-weight: 900;  color: black;font-size: 15px;}
+.projectsub{padding-top: 30px; font-weight: 100;  color: black;font-size: 15px;}
+.projectkeyword{padding-top: 30px; font-weight: 100;  color: dimgray;font-size: 15px;}

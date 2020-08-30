@@ -11,7 +11,7 @@
           $love.on('mousemove', function(e) {
                if(isT) return true;
                var posX = e.clientX, posY = e.clientY, top = Math.abs(lPosY - posY), left = Math.abs(lPosX - posX);
-               var max = 6;
+               var max = 3;
                for(var i = 0; i < max; i++){
                     var html =  '<span class="tt-text">💖</span>';
                     var $html = $(html);
@@ -32,9 +32,9 @@
           $peace.on('mousemove', function(e) {
                if(isP) return true;
                var posX = e.clientX, posY = e.clientY, top = Math.abs(pPosY - posY), left = Math.abs(pPosX - posX);
-               var max = 6;
+               var max = 3;
                for(var i = 0; i < max; i++){
-                    var html =  '<span class="tt-text">✌️</span>';
+                    var html =  '<span class="tt-text">🌏</span>';
                     var $html = $(html);
                     isP = true;
                     TweenMax.set($html, {autoAlpha: 1, top: top, left: left, x: 0, y: 0});
