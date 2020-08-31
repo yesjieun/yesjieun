@@ -1,53 +1,82 @@
-/* <span class="tt-text">💖 💖 💖</span> */
-
+// 네비게이션
 (function($) {
-     $(document).ready(function() {
-          var $love = $('#love');
-          var lPosX = $love.offset().left, lPosY = $love.offset().top;
-          var $peace = $('#peace');
-          var pPosX = $peace.offset().left, pPosY = $peace.offset().top;
-          var isT = false;
-          var isP = false;
-          $love.on('mousemove', function(e) {
-               if(isT) return true;
-               var posX = e.clientX, posY = e.clientY, top = Math.abs(lPosY - posY), left = Math.abs(lPosX - posX);
-               var max = 3;
-               for(var i = 0; i < max; i++){
-                    var html =  '<span class="tt-text">💖</span>';
-                    var $html = $(html);
-                    isT = true;
-                    TweenMax.set($html, {autoAlpha: 1, top: top, left: left, x: 0, y: 0});
-                    var xDir = Math.random() < 0.5 ? 1 : -1, yDir = Math.random() < 0.5 ? 1 : -1;
-                    var xEnd = Math.round(Math.random() * 100) * xDir, yEnd = Math.round(Math.random() * 100) * -1;
-                    TweenMax.to($html, 0.3, {css: {x: xEnd, y: yEnd}, onComplete: function() {
-                         TweenMax.to($(this.target), 0.1, {autoAlpha: 0, onComplete: function() {
-                              $(this.target).remove();
-                         }});
-                         if(i === max) isT = false;
-                    }})
-                    $love.append($html);
-               }
-          })
+    $(function() { //DOM ready
+        // target any a in the menu that has any children, then toggle .nav-dropdown class
+        $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // prevents all dropdowns opening when only one is clicked
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+        }); // end prevent dropdowns
+        // hide if click away
+        $('html').click(function() {
+        $('.nav-dropdown').hide();
+        }); // end hide
+        // toggle open, close styles on nav
+        $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+        }); // end toggle 
+        // toggle hamburger 
+        $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+        }); // end toggle hamburger
+    });
+    })(jQuery);
 
-          $peace.on('mousemove', function(e) {
-               if(isP) return true;
-               var posX = e.clientX, posY = e.clientY, top = Math.abs(pPosY - posY), left = Math.abs(pPosX - posX);
-               var max = 3;
-               for(var i = 0; i < max; i++){
-                    var html =  '<span class="tt-text">🌏</span>';
-                    var $html = $(html);
-                    isP = true;
-                    TweenMax.set($html, {autoAlpha: 1, top: top, left: left, x: 0, y: 0});
-                    var xDir = Math.random() < 0.5 ? 1 : -1, yDir = Math.random() < 0.5 ? 1 : -1;
-                    var xEnd = Math.round(Math.random() * 100) * xDir, yEnd = Math.round(Math.random() * 100) * -1;
-                    TweenMax.to($html, 0.3, {css: {x: xEnd, y: yEnd}, onComplete: function() {
-                         TweenMax.to($(this.target), 0.1, {autoAlpha: 0, onComplete: function() {
-                              $(this.target).remove();
-                         }});
-                         if(i === max) isP = false;
-                    }})
-                    $peace.append($html);
-               }
-          })
-     });
-})(jQuery);
+// 타이핑 효과
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};

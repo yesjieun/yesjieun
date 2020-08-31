@@ -32,6 +32,7 @@ a:visited{color: white; text-decoration: none;}
 .program .un:hover{color: #cecece}
 .program .css:hover{color: #449ce9}
 .program .ae:hover{color: #e7b7fc}
+.program .td:hover{color: #4aa6d1;}
 
 .design{font-family: 'Montserrat', sans-serif; font-weight: 200; color: black;font-size: 15px;}
 .projectnameE{font-family: 'Montserrat', sans-serif; font-weight: 900; padding-top: 30px; color: black;font-size: 30px;}
