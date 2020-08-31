@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v={{ time() }}">
     <title>YES</title>
 </head>
 <body>
@@ -43,30 +42,6 @@
       </section>
       
     <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
-    <script>
-      (function($) {
-    $(function() { //DOM ready
-        // target any a in the menu that has any children, then toggle .nav-dropdown class
-        $('nav ul li a:not(:only-child)').click(function(e) {
-        $(this).siblings('.nav-dropdown').toggle();
-        // prevents all dropdowns opening when only one is clicked
-        $('.nav-dropdown').not($(this).siblings()).hide();
-        e.stopPropagation();
-        }); // end prevent dropdowns
-        // hide if click away
-        $('html').click(function() {
-        $('.nav-dropdown').hide();
-        }); // end hide
-        // toggle open, close styles on nav
-        $('#nav-toggle').click(function() {
-        $('nav ul').slideToggle();
-        }); // end toggle 
-        // toggle hamburger 
-        $('#nav-toggle').on('click', function() {
-        this.classList.toggle('active');
-        }); // end toggle hamburger
-    });
-    })(jQuery);
-    </script>
+    <script src="./js/script2.js"></script>
 </body>
 </html>
