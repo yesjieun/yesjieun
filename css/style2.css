@@ -13,10 +13,10 @@
 
 @media only screen and (max-width: 799px){[class*="c"]{width: 100%}aside li{background-color: white; float: left; width: 17%; text-align: center;font-size: 14px; font-weight: bold}section#main{margin-top: 30px} .c_left{height: 0; position: relative;} .c_right{margin-left: 0;} .triangle{margin-top: 0px;}.rightimg01{margin: 50px 0 50px 0}}
 
-.buttonA{display: inline-block;height: 36px;padding: 0 10px 0 10px;background-color: #c6fe28;border: 1px solid #c6fe28;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 100; font-size: 30px;}
-.buttonB{display: inline-block;position: relative;top: 80px;left: 50%;right: 50%;transform: translate(-50%, -50%);padding: 8px 40px 8px 40px;background-color: #c6fe28;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 500; font-size: 20px;}
-.buttonA:hover{color: black;background-color: #9fce1f; border: 1px solid #9fce1f}
-.buttonB:hover{color: black;background-color: #9fce1f}
+.buttonA{display: inline-block;height: 36px;padding: 0 10px 0 10px;background-color: #000000;border: 1px solid #000000;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 100; font-size: 30px;}
+.buttonB{display: inline-block;position: relative;top: 80px;left: 50%;right: 50%;transform: translate(-50%, -50%);padding: 8px 40px 8px 40px;background-color: #000000;border-radius: 100px;color: #ffffff;line-height: 30px;cursor: pointer; text-decoration-style: none; font-family: 'Raleway', sans-serif;font-weight: 500; font-size: 20px;}
+.buttonA:hover{color: #000000;background-color: #c6fe28; border: 1px solid #c6fe28}
+.buttonB:hover{color: #000000;background-color: #c6fe28}
 
 a:link{text-decoration: none;}
 a:visited{color: white; text-decoration: none;}
@@ -25,6 +25,7 @@ a:visited{color: white; text-decoration: none;}
 .triangle.right:hover{border-color:transparent transparent transparent #c6fe28}
 .triangle.left {border-color:transparent black transparent transparent;left: 30px;}
 .triangle.right {border-color:transparent transparent transparent black;float: right;right: 30px;}
+.triangleCenter{display:inline-block; position: absolute ;left: 50%; transform:translate(-50%, -50%);bottom:60px; font-family: 'Raleway', sans-serif;font-size: 20px}
 
 .program{font-family: 'Montserrat', sans-serif; font-weight: 100; padding-top: 40px; color: dimgray;font-size: 10px;}
 .program .ai:hover{color: #fa8e26}
